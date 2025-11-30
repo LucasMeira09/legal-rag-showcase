@@ -8,12 +8,10 @@ export function Footer() {
   const footerLinks = {
     produit: [
       { name: "Fonctionnalités", href: "/fonctionnalites" },
-      { name: "Tarifs", href: "/tarifs" },
       { name: "Démo", href: "/demo" },
       { name: "API", href: "/api-docs" },
     ],
     ressources: [
-      { name: "Blog", href: "/ressources" },
       { name: "Documentation", href: "/docs" },
       { name: "Support", href: "/support" },
       { name: "Changelog", href: "/changelog" },
@@ -47,19 +45,19 @@ export function Footer() {
             <Link href="/" className="flex items-center space-x-2 mb-4">
               <Scale className="h-8 w-8 text-primary glow-effect" />
               <span className="text-xl font-bold text-foreground">
-                <span className="text-primary">EcoMind</span>
+                <span className="text-primary">JuriBot</span>
               </span>
             </Link>
             <p className="text-muted-foreground mb-6 max-w-md">
-              L&apos;IA qui révolutionne la recherche juridique en gestion des déchets. 
+              L&apos;IA qui révolutionne la recherche juridique.
               Recherche instantanée dans les textes de loi, jurisprudences et normes environnementales.
             </p>
-            
+
             {/* Contact Info */}
             <div className="space-y-2 mb-6">
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4" />
-                <span>contact@ia-juridique-dechets.com</span>
+                <span>contact@ia-juridique.com</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4" />
@@ -67,7 +65,7 @@ export function Footer() {
               </div>
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4" />
-                <span>Paris, France</span>
+                <span>Bruxelles, Belgique</span>
               </div>
             </div>
 
@@ -153,9 +151,9 @@ export function Footer() {
         <div className="border-t border-border/50 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-muted-foreground">
-              © {currentYear} EcoMind. Tous droits réservés.
+              © {currentYear} JuriBot. Tous droits réservés.
             </div>
-            
+
             {/* Social Links */}
             <div className="flex items-center space-x-4">
               {socialLinks.map((social) => (

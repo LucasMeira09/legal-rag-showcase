@@ -55,7 +55,7 @@ export function ProblemsSection() {
             quotidiennement
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            La gestion des déchets implique une réglementation complexe et en constante évolution. 
+            Votre domaine d'expertise implique une réglementation complexe et en constante évolution.
             Ces défis vous ralentissent et vous exposent à des risques.
           </p>
         </motion.div>
@@ -73,15 +73,15 @@ export function ProblemsSection() {
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-destructive/10 border border-destructive/20 rounded-2xl mb-6 group-hover:bg-destructive/20 transition-colors">
                     <problem.icon className="h-8 w-8 text-destructive" />
                   </div>
-                  
+
                   <h3 className="text-xl font-semibold text-foreground mb-4">
                     {problem.title}
                   </h3>
-                  
+
                   <p className="text-muted-foreground mb-6 leading-relaxed">
                     {problem.description}
                   </p>
-                  
+
                   <div className="inline-flex items-center px-3 py-1 bg-destructive/10 border border-destructive/20 rounded-full">
                     <span className="text-sm font-medium text-destructive">
                       {problem.stats}

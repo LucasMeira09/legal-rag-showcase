@@ -4,35 +4,22 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
 import {
   Clock,
-  Download,
-  ExternalLink,
   FileText,
   Search,
   Star,
   User as UserIcon,
-  Bot as BotIcon, // 👈 ajouté pour bulles user/IA
+  Bot as BotIcon, //  ajouté pour bulles user/IA
   // Filter // (laisse commenté si tu n’utilises pas)
 } from "lucide-react";
-import Link from "next/link";
+
 import { useState } from "react";
-import { useForm } from "react-hook-form";
 import { useInView } from "react-intersection-observer";
-import * as z from "zod";
 
 // ================== TIPOS ==================
-const demoFormSchema = z.object({
-  name: z.string().min(2, "Le nom doit contenir au moins 2 caractères"),
-  email: z.string().email("Adresse email invalide"),
-  company: z.string().min(2, "Le nom de l'entreprise est requis"),
-  phone: z.string().optional(),
-  role: z.string().min(1, "Le rôle est requis"),
-  message: z.string().min(10, "Le message doit contenir au moins 10 caractères"),
-});
-type DemoFormData = z.infer<typeof demoFormSchema>;
+
 
 type SearchResult = {
   id: number | string;
@@ -45,7 +32,18 @@ type SearchResult = {
   link: string;
 };
 
-// 👇 ajouté : structure de message pour le chat
+type ApiResultItem = {
+  id?: number | string;
+  title?: string;
+  source?: string;
+  date?: string;
+  excerpt?: string;
+  type?: string;
+  relevance?: number;
+  link?: string;
+};
+
+// ajouté : structure de message pour le chat
 type ChatMessage =
   | { role: "user"; content: string; createdAt?: string }
   | { role: "assistant"; content: string; meta?: SearchResult; createdAt?: string };
@@ -53,10 +51,9 @@ type ChatMessage =
 // ================== COMPONENTE ==================
 export function DemoPage() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
   const [isSearching, setIsSearching] = useState(false);
 
-  // 👇 ajouté : état du chat (dernier message en haut)
+  // ajouté : état du chat (dernier message en haut)
   const [messages, setMessages] = useState<ChatMessage[]>([]);
 
   const { ref, inView } = useInView({
@@ -64,15 +61,9 @@ export function DemoPage() {
     threshold: 0.1
   });
 
-  const {
-    handleSubmit,
-    formState: { isSubmitting },
-    reset
-  } = useForm<DemoFormData>({
-    resolver: zodResolver(demoFormSchema)
-  });
 
-  // ⬇️ changé : handleSearch retourne les résultats pour que ask() puisse construir la bulle IA
+
+  // changé : handleSearch retourne les résultats pour que ask() puisse construir la bulle IA
   const handleSearch = async (query: string): Promise<SearchResult[]> => {
     const q = query.trim();
     if (!q) return [];
@@ -90,7 +81,7 @@ export function DemoPage() {
 
       const data = await res.json();
 
-      const mappedResults: SearchResult[] = (data.results || []).map((item: any, index: number) => ({
+      const mappedResults: SearchResult[] = (data.results || []).map((item: ApiResultItem, index: number) => ({
         id: item.id ?? index,
         title: item.title ?? "Document sans titre",
         source: item.source ?? "Source inconnue",
@@ -101,18 +92,16 @@ export function DemoPage() {
         link: item.link ?? "#",
       }));
 
-      setSearchResults(mappedResults);
-      return mappedResults; // 👈 important pour le chat
+      return mappedResults; //  important pour le chat
     } catch (error) {
       console.error(error);
-      setSearchResults([]);
       return [];
     } finally {
       setIsSearching(false);
     }
   };
 
-  // 👇 ajouté : flux style ChatGPT
+  //  ajouté : flux style ChatGPT
   const ask = async (q: string) => {
     const query = q.trim();
     if (!query || isSearching) return;
@@ -142,24 +131,6 @@ export function DemoPage() {
 
     // Nettoie le champ
     setSearchQuery("");
-  };
-
-  const onSubmitDemo = async (data: DemoFormData) => {
-    try {
-      const res = await fetch("http://localhost:8000/demo-request", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      if (!res.ok) throw new Error("Erreur côté serveur");
-
-      alert("Demande de démo envoyée avec succès ! Nous vous contacterons dans les 24h.");
-      reset();
-    } catch (error) {
-      console.error(error);
-      alert("Impossible d’envoyer la demande pour le moment.");
-    }
   };
 
   return (
@@ -207,7 +178,7 @@ export function DemoPage() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="text-center text-muted-foreground">
-                    Exemples : “Obligations REP emballages ménagers”, “Sanctions pour non-respect du tri”, etc.
+                    Exemples : “Obligations emballages ménagers”, “Comment trier mes déchets ?”, etc.
                   </CardContent>
                 </Card>
               )}
@@ -295,32 +266,6 @@ export function DemoPage() {
                               {m.content}
                             </p>
 
-                            {/* Actions (ouvrir lien / exporter) */}
-                            <div className="mt-4 flex items-center justify-between">
-                              <Button
-                                asChild
-                                variant="outline"
-                                size="sm"
-                                className="border-primary/50 text-primary hover:bg-primary/10"
-                              >
-                                <Link
-                                  href={m.meta?.link || "#"}
-                                  className="inline-flex items-center gap-2"
-                                  target="_blank"
-                                >
-                                  Lire le document
-                                  <ExternalLink className="h-4 w-4" />
-                                </Link>
-                              </Button>
-                              <Button
-                                variant="ghost"
-                                size="sm"
-                                className="text-muted-foreground hover:text-foreground"
-                              >
-                                <Download className="h-4 w-4 mr-2" />
-                                Exporter
-                              </Button>
-                            </div>
                           </div>
                         </div>
                       </CardContent>
@@ -354,22 +299,6 @@ export function DemoPage() {
               </div>
 
               {/* Suggestions rapides (garde tes couleurs) */}
-              <div className="mt-3 flex flex-wrap gap-2">
-                {[
-                  "Obligations REP emballages ménagers",
-                  "Sanctions pour non-respect du tri",
-                  "Directive européenne déchets 2023",
-                  "Responsabilité élargie producteur"
-                ].map((example, index) => (
-                  <button
-                    key={index}
-                    onClick={() => ask(example)}
-                    className="text-xs bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 rounded-full px-3 py-1 transition-colors"
-                  >
-                    {example}
-                  </button>
-                ))}
-              </div>
             </div>
           </motion.div>
         </div>

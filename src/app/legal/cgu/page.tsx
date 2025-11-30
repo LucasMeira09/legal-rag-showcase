@@ -137,7 +137,7 @@ export default function CGUPage() {
       {
         title: "Tarification et facturation",
         content: `
-          <p>Nos tarifs sont disponibles sur la page dédiée et peuvent être modifiés avec un préavis de 30 jours.</p>
+          <p>Nos tarifs sont disponibles sur demande et peuvent être modifiés avec un préavis de 30 jours.</p>
           <br>
           <p><strong>Modalités de paiement :</strong></p>
           <ul>
