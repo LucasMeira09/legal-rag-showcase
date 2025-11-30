@@ -66,15 +66,15 @@ export function HowItWorksSection() {
             </span>
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            En 3 étapes simples, obtenez les réponses juridiques précises dont vous avez besoin 
-            pour assurer la conformité de votre gestion des déchets.
+            En 3 étapes simples, obtenez les réponses juridiques précises dont vous avez besoin
+            pour assurer la conformité de votre entreprise.
           </p>
         </motion.div>
 
         <div className="relative">
           {/* Connection Lines */}
           <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-primary/20 via-primary/50 to-primary/20 transform -translate-y-1/2 z-0" />
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             {steps.map((step, index) => (
               <motion.div
@@ -86,24 +86,17 @@ export function HowItWorksSection() {
               >
                 <Card className="h-full glass hover-glow cursor-glow group transition-all duration-300 hover:scale-105">
                   <CardContent className="p-8 text-center">
-                    {/* Step Number */}
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center border-4 border-background">
-                        <span className="text-sm font-bold text-primary-foreground">
-                          {step.step}
-                        </span>
-                      </div>
-                    </div>
+
 
                     {/* Icon */}
                     <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r ${step.color} rounded-2xl mb-6 group-hover:scale-110 transition-transform`}>
                       <step.icon className="h-8 w-8 text-white" />
                     </div>
-                    
+
                     <h3 className="text-xl font-semibold text-foreground mb-4">
                       {step.title}
                     </h3>
-                    
+
                     <p className="text-muted-foreground mb-6 leading-relaxed">
                       {step.description}
                     </p>
@@ -154,38 +147,7 @@ export function HowItWorksSection() {
           </div>
         </motion.div>
 
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-16"
-        >
-          <div className="text-center p-6 rounded-2xl bg-primary/5 border border-primary/10">
-            <div className="text-3xl font-bold text-primary mb-2">
-              &lt; 30s
-            </div>
-            <div className="text-sm text-muted-foreground">
-              Temps de réponse moyen
-            </div>
-          </div>
-          <div className="text-center p-6 rounded-2xl bg-primary/5 border border-primary/10">
-            <div className="text-3xl font-bold text-primary mb-2">
-              95%
-            </div>
-            <div className="text-sm text-muted-foreground">
-              Précision des réponses
-            </div>
-          </div>
-          <div className="text-center p-6 rounded-2xl bg-primary/5 border border-primary/10">
-            <div className="text-3xl font-bold text-primary mb-2">
-              24/7
-            </div>
-            <div className="text-sm text-muted-foreground">
-              Disponibilité continue
-            </div>
-          </div>
-        </motion.div>
+
       </div>
     </section>
   );

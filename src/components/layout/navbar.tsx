@@ -22,8 +22,6 @@ export function Navbar() {
   const navItems = [
     { name: "Accueil", href: "/" },
     { name: "Fonctionnalités", href: "/fonctionnalites" },
-    { name: "Tarifs", href: "/tarifs" },
-    { name: "Ressources", href: "/ressources" },
     { name: "Démo", href: "/demo" },
   ];
 
@@ -32,11 +30,10 @@ export function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
           ? "glass border-b border-border/50 backdrop-blur-md"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
@@ -49,7 +46,7 @@ export function Navbar() {
               </div>
             </div>
             <span className="text-xl font-bold text-foreground">
-              <span className="text-primary">EcoMind</span>
+              <span className="text-primary">JuriBot</span>
             </span>
           </Link>
 
@@ -98,7 +95,7 @@ export function Navbar() {
                     </span>
                   </div>
                 </div>
-                
+
                 <nav className="flex flex-col space-y-4">
                   {navItems.map((item) => (
                     <Link
