@@ -1,35 +1,20 @@
-# IA Juridique Déchets 🏛️⚖️
+# IA Juridique Déchets 
 
 Site vitrine moderne et futuriste pour une IA juridique spécialisée dans la gestion des déchets. Interface Next.js avec animations 3D, design futuriste et fonctionnalités complètes.
 
-## 🚀 Fonctionnalités
+##  Fonctionnalités
 
 ### Design & UX
 - **Interface futuriste** avec palette verte (vert primaire, vert néon, charcoal)
 - **Animations 3D** avec Three.js (grille animée, particules flottantes)
-- **Effets visuels** : glassmorphism, hover effects, parallax
 - **Responsive design** optimisé mobile/desktop
-- **Accessibilité** conforme aux standards WCAG
 
 ### Pages & Sections
-- **Page d'accueil** : Hero 3D, problèmes résolus, fonctionnalités, témoignages
-- **Fonctionnalités** : Détails des 8 fonctionnalités principales de l'IA
-- **Tarifs** : 3 plans (Essai gratuit, Pro, Entreprise)
-- **Démo** : Sandbox interactif + formulaire de demande de démo
-- **Ressources** : Blog avec articles et filtres par catégorie
-- **Pages légales** : Mentions, RGPD, CGU, conformité
+- **Page d'accueil** 
+- **Fonctionnalités** 
+- **Démo** 
 
-### Fonctionnalités IA (Mock)
-- **Recherche sémantique** dans 10k+ documents juridiques
-- **Veille automatique** avec alertes personnalisées
-- **Analyse de documents** avec extraction d'obligations
-- **Comparateur multi-juridictions** (UE, fédéral, régional)
-- **Assistant conformité** avec checklist dynamique
-- **Générateur de rapports** PDF/Word avec sources
-- **Espace équipe** collaboratif
-- **API complète** pour intégrations
-
-## 🛠️ Stack Technique
+##  Stack Technique
 
 ### Frontend
 - **Next.js 15** avec App Router
@@ -41,18 +26,10 @@ Site vitrine moderne et futuriste pour une IA juridique spécialisée dans la ge
 
 ### Backend & API
 - **API Routes** Next.js
-- **Endpoints mockés** : `/api/search`, `/api/alerts`, `/api/analyze`, `/api/demo`
 - **Validation** avec Zod
 - **Formulaires** avec React Hook Form
 
-### SEO & Performance
-- **Métadonnées** optimisées (OpenGraph, Twitter Cards)
-- **Sitemap** automatique
-- **Robots.txt** configuré
-- **Schema.org** markup
-- **Optimisations** images et lazy loading
-
-## 📦 Installation
+##  Installation
 
 ### Prérequis
 - Node.js 18+ 
@@ -73,15 +50,7 @@ npm run dev
 
 Le site sera accessible sur [http://localhost:3000](http://localhost:3000)
 
-## 🎨 Personnalisation
-
-### Palette de couleurs
-Les couleurs sont définies dans `src/app/globals.css` :
-- **Vert primaire** : `#16A34A` (accents, CTA)
-- **Vert foncé** : `#065F46` (header/footer)
-- **Vert néon** : `#00FF88` (effets futuristes)
-- **Charcoal** : `#0B0F14` (fond)
-- **Gris** : `#94A3B8` (texte secondaire)
+##  Personnalisation
 
 ### Typographie
 - **Police principale** : Inter (variable)
@@ -94,7 +63,7 @@ Les animations sont configurées dans `globals.css` :
 - `float-animation` : Flottement
 - `cursor-glow` : Effet de halo au survol
 
-## 📁 Structure du projet
+##  Structure du projet
 
 ```
 src/
@@ -124,7 +93,7 @@ src/
     └── utils.ts          # Fonctions utilitaires
 ```
 
-## 🚀 Déploiement
+##  Déploiement
 
 ### Vercel (Recommandé)
 ```bash
@@ -150,7 +119,7 @@ NEXT_PUBLIC_GOOGLE_ANALYTICS=GA_MEASUREMENT_ID
 - **Output Directory** : `.next`
 - **Install Command** : `npm install`
 
-## 🔧 Scripts disponibles
+##  Scripts disponibles
 
 ```bash
 # Développement
@@ -164,78 +133,6 @@ npm run type-check   # Vérification TypeScript
 npx shadcn@latest add [component]  # Ajouter un composant
 ```
 
-## 📊 Performance
-
-### Optimisations implémentées
-- **Lazy loading** des composants 3D
-- **Images optimisées** avec Next.js Image
-- **Prefetch** des liens
-- **Code splitting** automatique
-- **Compression** gzip/brotli
-- **Cache** statique
-
-### Métriques cibles
-- **Lighthouse** : ≥90 (Performance, SEO, Accessibilité)
-- **Core Web Vitals** : Optimisés
-- **First Contentful Paint** : <1.5s
-- **Largest Contentful Paint** : <2.5s
-
-## 🔒 Sécurité & Conformité
-
-### RGPD
-- **Politique de confidentialité** complète
-- **Gestion des cookies** avec bannière de consentement
-- **Droits des utilisateurs** (accès, rectification, suppression)
-- **DPO** contact disponible
-
-### Sécurité
-- **HTTPS** obligatoire
-- **Headers de sécurité** configurés
-- **Validation** des entrées utilisateur
-- **Protection CSRF**
-
-## 🧪 Tests
-
-```bash
-# Tests unitaires (à implémenter)
-npm run test
-
-# Tests e2e (à implémenter)
-npm run test:e2e
-
-# Coverage
-npm run test:coverage
-```
-
-## 📈 Analytics & Monitoring
-
-### Intégrations recommandées
-- **Google Analytics 4** : Suivi des utilisateurs
-- **Vercel Analytics** : Métriques de performance
-- **Sentry** : Monitoring des erreurs
-- **Hotjar** : Heatmaps et enregistrements
-
-## 🤝 Contribution
-
-### Guidelines
-1. **Fork** le repository
-2. **Créer** une branche feature (`git checkout -b feature/nouvelle-fonctionnalite`)
-3. **Commit** les changements (`git commit -m 'Ajout nouvelle fonctionnalité'`)
-4. **Push** vers la branche (`git push origin feature/nouvelle-fonctionnalite`)
-5. **Ouvrir** une Pull Request
-
-### Standards de code
-- **ESLint** + **Prettier** configurés
-- **TypeScript** strict
-- **Conventions** de nommage cohérentes
-- **Documentation** des composants complexes
-
-## 📞 Support
-
-### Contact
-- **Email** : contact@ia-juridique-dechets.com
-- **Téléphone** : +33 1 23 45 67 89
-- **Site** : https://ia-juridique-dechets.com
 
 ### Documentation
 - **Next.js** : https://nextjs.org/docs
@@ -243,30 +140,13 @@ npm run test:coverage
 - **shadcn/ui** : https://ui.shadcn.com/docs
 - **Three.js** : https://threejs.org/docs
 
-## 📄 Licence
+##  Licence
 
 Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
-## 🎯 Roadmap
+## API 
+-https://github.com/LucasMeira09/rag-juridique-api
 
-### Version 1.1
-- [ ] Système de blog complet avec MDX
-- [ ] Tests unitaires et e2e
-- [ ] Intégration analytics
-- [ ] Optimisations performance avancées
-
-### Version 1.2
-- [ ] Mode sombre/clair
-- [ ] Internationalisation (i18n)
-- [ ] PWA avec service worker
-- [ ] Dashboard administrateur
-
-### Version 2.0
-- [ ] Intégration API réelle
-- [ ] Système d'authentification
-- [ ] Base de données
-- [ ] Fonctionnalités IA réelles
-
----
-
-**Développé avec ❤️ pour révolutionner la recherche juridique en gestion des déchets**
+## Our equipe
+-https://github.com/LucasMeira09
+-https://github.com/16050
