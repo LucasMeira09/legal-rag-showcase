@@ -73,11 +73,8 @@ src/
 │   │   ├── alerts/        # Gestion des alertes
 │   │   ├── analyze/       # Analyse de documents
 │   │   └── demo/          # Demandes de démo
-│   ├── legal/             # Pages légales
-│   ├── fonctionnalites/   # Page fonctionnalités
-│   ├── tarifs/            # Page tarifs
+│   ├── fonctionnalites/   # Page fonctionnalités         
 │   ├── demo/              # Page démo
-│   ├── ressources/        # Blog/ressources
 │   ├── globals.css        # Styles globaux
 │   ├── layout.tsx         # Layout principal
 │   ├── page.tsx           # Page d'accueil
