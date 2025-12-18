@@ -144,6 +144,9 @@ Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 ## API 
 -https://github.com/LucasMeira09/rag-juridique-api
 
-## Our equipe
+## Our team
 -https://github.com/LucasMeira09
 -https://github.com/16050
+
+# Special mention
+-Tekno-Familie --> https://teknofamily.be/
