@@ -1,69 +1,69 @@
-# IA Juridique Déchets 
+# Legal AI for Waste Management 
 
-Site vitrine moderne et futuriste pour une IA juridique spécialisée dans la gestion des déchets. Interface Next.js avec animations 3D, design futuriste et fonctionnalités complètes.
+Modern and futuristic showcase website for a legal AI specialized in waste management. Next.js interface with 3D animations, futuristic design and complete features.
 
-##  Fonctionnalités
+##  Features
 
 ### Design & UX
-- **Interface futuriste** avec palette verte (vert primaire, vert néon, charcoal)
-- **Animations 3D** avec Three.js (grille animée, particules flottantes)
-- **Responsive design** optimisé mobile/desktop
+- **Futuristic interface** with green palette (primary green, neon green, charcoal)
+- **3D animations** with Three.js (animated grid, floating particles)
+- **Responsive design** optimized for mobile/desktop
 
 ### Pages & Sections
-- **Page d'accueil** 
-- **Fonctionnalités** 
-- **Démo** 
+- **Home page** 
+- **Features** 
+- **Demo** 
 
-##  Stack Technique
+##  Tech Stack
 
 ### Frontend
-- **Next.js 15** avec App Router
+- **Next.js 15** with App Router
 - **TypeScript** strict
-- **Tailwind CSS** avec configuration personnalisée
-- **shadcn/ui** pour les composants
-- **Framer Motion** pour les animations
-- **Three.js** + React Three Fiber pour les effets 3D
+- **Tailwind CSS** with custom configuration
+- **shadcn/ui** for components
+- **Framer Motion** for animations
+- **Three.js** + React Three Fiber for 3D effects
 
 ### Backend & API
 - **API Routes** Next.js
-- **Validation** avec Zod
-- **Formulaires** avec React Hook Form
+- **Validation** with Zod
+- **Forms** with React Hook Form
 
 ##  Installation
 
-### Prérequis
+### Prerequisites
 - Node.js 18+ 
-- npm, yarn, pnpm ou bun
+- npm, yarn, pnpm or bun
 
 ### Installation
 ```bash
-# Cloner le repository
+# Clone the repository
 git clone <repository-url>
 cd site-dechets
 
-# Installer les dépendances
+# Install dependencies
 npm install
 
-# Lancer le serveur de développement
+# Start the development server
 npm run dev
 ```
 
-Le site sera accessible sur [http://localhost:3000](http://localhost:3000)
+The site will be accessible at [http://localhost:3000](http://localhost:3000)
 
-##  Personnalisation
+##  Customization
 
-### Typographie
-- **Police principale** : Inter (variable)
-- **Police de fallback** : Manrope, system-ui
+### Typography
+- **Main font**: Inter (variable)
+- **Fallback font**: Manrope, system-ui
 
 ### Animations
-Les animations sont configurées dans `globals.css` :
-- `glow-effect` : Effet de lueur
-- `neon-text` : Texte néon clignotant
-- `float-animation` : Flottement
-- `cursor-glow` : Effet de halo au survol
+Animations are configured in `globals.css`:
+- `glow-effect`: Glow effect
+- `neon-text`: Blinking neon text
+- `float-animation`: Floating effect
+- `cursor-glow`: Hover halo effect
 
-##  Structure du projet
+##  Project Structure
 
 ```
 src/
@@ -90,56 +90,56 @@ src/
     └── utils.ts          # Fonctions utilitaires
 ```
 
-##  Déploiement
+##  Deployment
 
-### Vercel (Recommandé)
+### Vercel (Recommended)
 ```bash
-# Installer Vercel CLI
+# Install Vercel CLI
 npm i -g vercel
 
-# Déployer
+# Deploy
 vercel
 
-# Ou connecter le repository GitHub à Vercel
+# Or connect the GitHub repository to Vercel
 ```
 
-### Variables d'environnement
-Créer un fichier `.env.local` :
+### Environment variables
+Create a `.env.local` file:
 ```env
 NEXT_PUBLIC_SITE_URL=https://ia-juridique-dechets.com
 NEXT_PUBLIC_GOOGLE_ANALYTICS=GA_MEASUREMENT_ID
 ```
 
-### Configuration Vercel
-- **Framework** : Next.js
-- **Build Command** : `npm run build`
-- **Output Directory** : `.next`
-- **Install Command** : `npm install`
+### Vercel Configuration
+- **Framework**: Next.js
+- **Build Command**: `npm run build`
+- **Output Directory**: `.next`
+- **Install Command**: `npm install`
 
-##  Scripts disponibles
+##  Available Scripts
 
 ```bash
-# Développement
-npm run dev          # Serveur de développement
-npm run build        # Build de production
-npm run start        # Serveur de production
+# Development
+npm run dev          # Development server
+npm run build        # Production build
+npm run start        # Production server
 npm run lint         # ESLint
-npm run type-check   # Vérification TypeScript
+npm run type-check   # TypeScript check
 
 # shadcn/ui
-npx shadcn@latest add [component]  # Ajouter un composant
+npx shadcn@latest add [component]  # Add a component
 ```
 
 
 ### Documentation
-- **Next.js** : https://nextjs.org/docs
-- **Tailwind CSS** : https://tailwindcss.com/docs
-- **shadcn/ui** : https://ui.shadcn.com/docs
-- **Three.js** : https://threejs.org/docs
+- **Next.js**: https://nextjs.org/docs
+- **Tailwind CSS**: https://tailwindcss.com/docs
+- **shadcn/ui**: https://ui.shadcn.com/docs
+- **Three.js**: https://threejs.org/docs
 
-##  Licence
+##  License
 
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
+This project is licensed under the MIT license. See the `LICENSE` file for more details.
 
 ## API 
 -https://github.com/LucasMeira09/rag-juridique-api
