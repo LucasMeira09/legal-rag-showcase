@@ -203,13 +203,13 @@ export function DemoPage() {
                   transition={{ duration: 0.35, delay: idx * 0.04 }}
                 >
                   {m.role === "user" ? (
-                    <Card className="border-primary/30 bg-primary/5">
+                    <Card className="border-primary/30 bg-primary/5 overflow-hidden">
                       <CardContent className="p-5">
                         <div className="flex items-start gap-3">
                           <div className="p-2 rounded-full bg-primary/10">
                             <UserIcon className="h-5 w-5 text-primary" />
                           </div>
-                          <div className="flex-1">
+                          <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-2 mb-2">
                               <Badge variant="secondary">Vous</Badge>
                               {m.createdAt && (
@@ -218,19 +218,19 @@ export function DemoPage() {
                                 </span>
                               )}
                             </div>
-                            <p className="text-foreground leading-relaxed">{m.content}</p>
+                            <p className="text-foreground leading-relaxed break-words">{m.content}</p>
                           </div>
                         </div>
                       </CardContent>
                     </Card>
                   ) : (
-                    <Card className="glass hover-glow">
+                    <Card className="glass hover-glow overflow-hidden">
                       <CardContent className="p-5">
                         <div className="flex items-start gap-3">
                           <div className="p-2 rounded-full bg-accent/10">
                             <BotIcon className="h-5 w-5 text-accent" />
                           </div>
-                          <div className="flex-1">
+                          <div className="flex-1 min-w-0">
                             <div className="flex flex-wrap items-center gap-2 mb-2">
                               <Badge>IA</Badge>
                               {m.meta?.type && (
@@ -273,7 +273,7 @@ export function DemoPage() {
                             )}
 
                             {/* Réponse (texte du RAG) */}
-                            <p className="text-muted-foreground leading-relaxed whitespace-pre-wrap">
+                            <p className="text-muted-foreground leading-relaxed whitespace-pre-wrap break-words">
                               {m.content}
                             </p>
 
