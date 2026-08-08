@@ -19,7 +19,7 @@ const detailedFeatures = [
   {
     id: "recherche-semantique",
     icon: Search,
-    title: "Recherche sémantique juridique",
+    title: "Recherche sémantique",
     description: "Recherchez par concepts plutôt que par mots-clés. Notre IA comprend le contexte et trouve les textes pertinents même avec des formulations différentes.",
     longDescription: "Notre moteur de recherche sémantique révolutionne la façon dont vous accédez à l'information juridique. Plutôt que de chercher des mots-clés exacts, vous pouvez poser des questions en langage naturel. L'IA comprend l'intention derrière votre requête et trouve les documents pertinents, même s'ils utilisent une terminologie différente.",
     capabilities: [

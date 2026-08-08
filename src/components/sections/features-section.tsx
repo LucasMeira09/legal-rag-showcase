@@ -22,7 +22,7 @@ import { useInView } from "react-intersection-observer";
 const features = [
   {
     icon: Search,
-    title: "Recherche sémantique juridique",
+    title: "Recherche sémantique",
     description: "Recherchez par concepts plutôt que par mots-clés. Notre IA comprend le contexte et trouve les textes pertinents même avec des formulations différentes.",
     badges: ["IA avancée", "Contexte"],
     color: "from-blue-500 to-cyan-500"

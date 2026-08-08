@@ -2,7 +2,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle, FileText, Search } from "lucide-react";
+import { ArrowRight, CheckCircle, FileText, Search, Shield, Database } from "lucide-react";
 import { useInView } from "react-intersection-observer";
 
 const steps = [
@@ -11,11 +11,6 @@ const steps = [
     icon: Search,
     title: "Posez votre question",
     description: "Formulez votre question en langage naturel. Notre IA comprend le contexte de votre activité et vos besoins spécifiques.",
-    details: [
-      "Question en français naturel",
-      "Contexte d'activité automatiquement détecté",
-      "Suggestions de requêtes optimisées"
-    ],
     color: "from-blue-500 to-cyan-500"
   },
   {
@@ -23,11 +18,6 @@ const steps = [
     icon: FileText,
     title: "Analyse intelligente",
     description: "L'IA explore instantanément notre base de données juridique, identifie les textes pertinents et extrait les informations clés.",
-    details: [
-      "Recherche dans 10k+ documents juridiques",
-      "Extraction automatique des obligations",
-      "Analyse de la jurisprudence récente"
-    ],
     color: "from-purple-500 to-violet-500"
   },
   {
@@ -35,11 +25,6 @@ const steps = [
     icon: CheckCircle,
     title: "Réponse personnalisée",
     description: "Recevez une réponse structurée avec les textes de référence, les obligations applicables et les actions à entreprendre.",
-    details: [
-      "Synthèse exécutive claire",
-      "Textes de loi cités avec liens",
-      "Plan d'action personnalisé"
-    ],
     color: "from-green-500 to-emerald-500"
   }
 ];
@@ -101,15 +86,7 @@ export function HowItWorksSection() {
                       {step.description}
                     </p>
 
-                    {/* Details */}
-                    <div className="space-y-2">
-                      {step.details.map((detail, detailIndex) => (
-                        <div key={detailIndex} className="flex items-center justify-center space-x-2 text-sm text-muted-foreground">
-                          <div className="w-1.5 h-1.5 bg-primary rounded-full" />
-                          <span>{detail}</span>
-                        </div>
-                      ))}
-                    </div>
+
                   </CardContent>
                 </Card>
 
@@ -124,25 +101,42 @@ export function HowItWorksSection() {
           </div>
         </div>
 
-        {/* Demo CTA */}
+        {/* Enterprise Adaptation Banner */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-center mt-16"
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-16 max-w-4xl mx-auto"
         >
-          <div className="inline-flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20 rounded-2xl px-8 py-6">
-            <div className="text-center sm:text-left">
-              <h4 className="text-lg font-semibold text-foreground mb-2">
-                Prêt à essayer ?
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                Testez notre IA avec une question réelle en moins de 30 secondes
-              </p>
-            </div>
-            <div className="flex items-center space-x-2 text-primary font-medium">
-              <span>Voir la démo</span>
-              <ArrowRight className="h-4 w-4" />
+          <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-gradient-to-b from-card/50 to-background/50 backdrop-blur-md p-8 md:p-10 shadow-2xl">
+            {/* Background glow effects */}
+            <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-primary/10 blur-3xl" />
+            <div className="absolute -left-20 -bottom-20 h-40 w-40 rounded-full bg-accent/10 blur-3xl" />
+
+            <div className="relative flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8">
+              <div className="flex-shrink-0 p-4 bg-primary/10 rounded-2xl border border-primary/20">
+                <Database className="h-10 w-10 text-primary" />
+              </div>
+              <div className="flex-grow space-y-4">
+                <div className="flex flex-wrap items-center gap-2">
+                  <h4 className="text-xl md:text-2xl font-bold text-foreground">
+                    Adaptable pour votre entreprise
+                  </h4>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 rounded-full">
+                    <Shield className="h-3.5 w-3.5" /> Sécurisé & Privé
+                  </span>
+                </div>
+                <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+                  Ce système est conçu pour être entièrement adapté aux besoins de votre entreprise. 
+                  Grâce à un pipeline d'ingestion automatisé, importez facilement tous vos documents 
+                  (<strong>PDF, DOCX ou fichiers texte</strong>) dans une base de données souveraine et 
+                  strictement confidentielle, accessible uniquement par vos équipes.
+                </p>
+                <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+                  Notre moteur de recherche sémantique permet ensuite à vos collaborateurs de retrouver instantanément 
+                  les informations clés et de synthétiser des réponses précises parmi des milliers de documents internes.
+                </p>
+              </div>
             </div>
           </div>
         </motion.div>

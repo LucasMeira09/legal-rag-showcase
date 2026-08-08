@@ -71,7 +71,8 @@ export function DemoPage() {
     setSearchQuery(q);
 
     try {
-      const res = await fetch("http://localhost:8000/search", {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+      const res = await fetch(`${apiUrl}/search`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query: q }),
@@ -297,6 +298,10 @@ export function DemoPage() {
                   )}
                 </Button>
               </div>
+              
+              <p className="text-xs text-muted-foreground text-center mt-3">
+                * Note : La base de documents présente sur cette démo est très limitée et orientée sur le droit des déchets (à des fins de test uniquement).
+              </p>
 
               {/* Suggestions rapides (garde tes couleurs) */}
             </div>
