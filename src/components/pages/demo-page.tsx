@@ -128,6 +128,16 @@ export function DemoPage() {
         },
         ...prev,
       ]);
+    } else {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+      setMessages(prev => [
+        {
+          role: "assistant",
+          content: `Impossible d'obtenir une réponse depuis le serveur d'IA (${apiUrl}). Vérifiez la configuration de l'API et la variable d'environnement NEXT_PUBLIC_API_URL.`,
+          createdAt: new Date().toISOString(),
+        },
+        ...prev,
+      ]);
     }
 
     // Nettoie le champ
