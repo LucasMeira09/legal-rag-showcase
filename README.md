@@ -1,6 +1,7 @@
 # Legal AI for Waste Management 
 
 Modern and futuristic showcase website for a legal AI specialized in waste management. Next.js interface with 3D animations, futuristic design and complete features.
+Site is accessible at --> https://legal-rag-showcase.onrender.com
 
 ##  Features
 
